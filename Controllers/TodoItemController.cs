@@ -52,7 +52,7 @@ public class TodoItemController : Controller
         return View(todoItem);
     }
 
-    // GET: Todo/Edit/5
+    // GET: Todo/Edit
     public async Task<ActionResult> Edit(int id)
     {
         var response = await _httpClient.GetAsync($"{_baseAddress}/{id}");
@@ -68,7 +68,7 @@ public class TodoItemController : Controller
         return RedirectToAction("Index");
     }
 
-    // POST: Todo/Edit/5
+    // POST: Todo/Edit
     [HttpPost]
     public async Task<ActionResult> Edit(int id, TodoItem todoItem)
     {
@@ -85,7 +85,7 @@ public class TodoItemController : Controller
         return View(todoItem);
     }
 
-    // GET: Todo/Delete/5
+    // GET: Todo/Delete
     public async Task<ActionResult> Delete(int id)
     {
         var response = await _httpClient.GetAsync($"{_baseAddress}/{id}");
@@ -101,7 +101,7 @@ public class TodoItemController : Controller
         return RedirectToAction("Index");
     }
 
-    // POST: Todo/Delete/5
+    // POST: Todo/Delete
     [HttpPost, ActionName("Delete")]
     public async Task<ActionResult> DeleteConfirmed(int id)
     {
